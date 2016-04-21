@@ -33,5 +33,9 @@
     "url": "git://github.com/owner/getGLStatus.git"
   },
   "author": "owner",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "vogels": "^2.2.0"
+  }
 }
