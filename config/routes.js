@@ -46,7 +46,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   'post /record/':{
-    target:'Api.record',
+    target:'Ajax.record',
     cors:{
       origin:'*',
       method:'POST'

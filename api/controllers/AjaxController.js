@@ -7,7 +7,8 @@
 
 module.exports = {
 	record:(req,res)=>{
-		console.log(req.allParams());
+		//console.log(req.allParams());
+		//console.log(req.headers);
 		res.send("This is TEST");
 	}
 };
