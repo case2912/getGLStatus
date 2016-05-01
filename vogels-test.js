@@ -47,7 +47,7 @@ var get = function(){
 
 var update = function(){
   return new Promise(function(resolve, reject){
-    NewTable.update({ID:'HELLO',  Num:2345}, function(err, acc){
+    NewTable.update({ID:'HELLO',  Num:12345}, function(err, acc){
       if(err){
         console.log('update error', err);
         reject();
