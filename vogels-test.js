@@ -7,7 +7,8 @@ var NewTable = vogels.define("NewTable",{
   hashKey:"ID",
   schema:{
     ID:Joi.string(),
-    Num:Joi.number()
+    Num:Joi.number(),
+    boolean:Joi.boolean()
   }
 });
 var createTable = function(){
@@ -25,8 +26,9 @@ var createTable = function(){
 
 var insertElement = function(){
   NewTable.create({
-    ID:"!!",
-    Num:1111
+    ID:"334433",
+    Num:443344,
+    boolean:true
   },(err)=>{
     if(err){
       console.log("Error has occured",err);
@@ -35,7 +37,7 @@ var insertElement = function(){
     }
   });
 }
-//createTable().then(()=>{insertElement()});
+createTable().then(()=>{insertElement()});
 // NewTable.destroy('!!', function (err) {
 //   console.log('account deleted');
 // });
@@ -47,7 +49,7 @@ var get = function(){
 
 var update = function(){
   return new Promise(function(resolve, reject){
-    NewTable.update({ID:'HELLO',  Num:12345}, function(err, acc){
+    NewTable.update({ID:'HELLO',  Num:34567}, function(err, acc){
       if(err){
         console.log('update error', err);
         reject();
@@ -59,4 +61,4 @@ var update = function(){
   });
 }
 
-update().then(()=>{get()});
+//update().then(()=>{get()});

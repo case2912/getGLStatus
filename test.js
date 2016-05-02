@@ -3,7 +3,7 @@ var Joi = require('joi');
 vogels.AWS.config.loadFromPath('credentials.json');
 vogels.AWS.config.update({region:"us-west-2"});
 
-var define = vogels.define("GetGLStatus",{
+var table = vogels.define("GetGLStatus",{
   hashKey:"ID",
   schema:{
     ID:Joi.string(),
@@ -48,38 +48,40 @@ var createTable = function(){
 };
 
 var insertElement = function(){
-  NewTable.create({
-    ID:"1",
-    ANGLE_instanced_arrays:true,
-    EXT_blend_minmax:true,
-    EXT_color_buffer_half_float:true,
-    EXT_disjoint_timer_query:true,
-    EXT_frag_depth:true,
-    EXT_sRGB:true,
-    EXT_shader_texture_lod:true,
-    EXT_texture_filter_anisotropic:true,
-    OES_element_index_uint:true,
-    OES_standard_derivatives:true,
-    OES_texture_float:true,
-    OES_texture_float_linear:true,
-    OES_texture_half_float:true,
-    OES_texture_half_float_linear:true,
-    OES_vertex_array_object:true,
-    WEBGL_color_buffer_float:true,
-    WEBGL_compressed_texture_atc:true,
-    WEBGL_compressed_texture_etc1:true,
-    WEBGL_compressed_texture_pvrtc:true,
-    WEBGL_compressed_texture_s3tc:true,
-    WEBGL_debug_renderer_info:true,
-    WEBGL_debug_shaders:true,
-    WEBGL_depth_texture:true,
-    WEBGL_draw_buffers:true,
-    WEBGL_lose_context:true
-  },(err)=>{
-    if(err){
-      console.log("Error has occured",err);
-    }else{
-      console.log("Inserted element successfully");
-    }
-  });
+    table.create({
+      ID:"1",
+      ANGLE_instanced_arrays:true,
+      EXT_blend_minmax:true,
+      EXT_color_buffer_half_float:true,
+      EXT_disjoint_timer_query:true,
+      EXT_frag_depth:true,
+      EXT_sRGB:true,
+      EXT_shader_texture_lod:true,
+      EXT_texture_filter_anisotropic:true,
+      OES_element_index_uint:true,
+      OES_standard_derivatives:true,
+      OES_texture_float:true,
+      OES_texture_float_linear:true,
+      OES_texture_half_float:true,
+      OES_texture_half_float_linear:true,
+      OES_vertex_array_object:true,
+      WEBGL_color_buffer_float:true,
+      WEBGL_compressed_texture_atc:true,
+      WEBGL_compressed_texture_etc1:true,
+      WEBGL_compressed_texture_pvrtc:true,
+      WEBGL_compressed_texture_s3tc:true,
+      WEBGL_debug_renderer_info:true,
+      WEBGL_debug_shaders:true,
+      WEBGL_depth_texture:true,
+      WEBGL_draw_buffers:true,
+      WEBGL_lose_context:true
+    },(err)=>{
+      if(err){
+        console.console.log("Error has occured",err);
+      }else{
+        console.log("Inserted element successfully");
+      }
+    });
+
 }
+createTable().then(()=>{insertElement()});
